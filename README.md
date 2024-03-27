@@ -1,1 +1,1 @@
-# CodeForces-Insight
+# CodeForces-Explorer
