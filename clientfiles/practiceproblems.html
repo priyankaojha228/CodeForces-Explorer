@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Practice Problems</title>
+    <script>
+        const selectedValue = localStorage.getItem("selectedValue");
+        document.title = "Problems on " + selectedValue;
+    </script>
+    <link rel="icon" type="image/png" href="/images/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <script src="./practiceproblems.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="./images/icon.png" alt="Codeforces Explorer" width="40" height="40">
+                    </a>
+                </div>
+            </nav>
+            <a class="navbar-brand" href="./main.html">Codeforces Explorer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="container my-4" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <div class="input-group">
+                            <label class="input-group-text" for="inputGroupSelect01">Topic</label>
+
+                            <input class="form-control text-primary fw-bold" type="text" value="selectedValue" disabled
+                                readonly>
+                            <script>
+                                const inputElement = document.querySelector(".form-control");
+                                inputElement.value = selectedValue;
+                                inputElement.disabled = true;
+                                inputElement.readOnly = true;
+                            </script>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    </div>
+
+    </nav>
+
+    <div class="modal" tabindex="-1" role="dialog" id="ratingModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rating Range Selected</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="selectedRating"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ratingModal"
+        id="ratingModalBtn" style="display:none;"></button>
+
+    <div class="container my-5">
+        <table class="table table-bordered table-responsive-sm" id="problem-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="table-success">
+                        <center>Problem Name</center>
+                    </th>
+                    <th scope="col" class="table-success">
+                        <center>Status</center>
+                    </th>
+                    <th scope="col" class="table-success">
+                        <center>Difficulty</center>
+                    </th>
+                    <th scope="col" class="table-success">
+                        <center>Solved Count</center>
+                    </th>
+                    <th scope="col" class="table-success">
+                        <center>Submit Your Code</center>
+                    </th>
+                </tr>
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border text-success" role="status" id="spinner">
+                        <span class="visually-hidden">Loading.....</span>
+                    </div>
+                </div>
+            </thead>
+            <tbody id="problem-list">
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

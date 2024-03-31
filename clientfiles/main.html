@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codeforces Explorer</title>
+    <link rel="icon" type="image/png" href="/images/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <script src="./main.js"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="./images/icon.png" alt="Codeforces Explorer" width="40" height="40">
+                    </a>
+                    <a class="navbar-brand" href="./main.html">Codeforces Explorer</a>
+                </div>
+            </nav>
+
+                <form class="d-flex" role="search">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input id="username-input" class="form-control me-2" type="search" placeholder="Enter username"
+                            aria-label="Search">
+                    </div>
+                    <button class="btn btn-primary mx-1" type="submit" id="liveToastBtn">Login</button>
+                </form>
+        </div>
+    </nav>
+
+    </div>
+
+    </nav>
+    <div class="container">
+        <div id="alert-message"
+            class="alert alert-danger d-flex align-items-center alert-dismissible fade show d-none mt-3" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-exclamation-triangle-fill mx-2" viewBox="0 0 16 16">
+                <path
+                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+            <div>
+                <strong>Enter Codeforces Username</strong> to practice problems.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="alert-message1"
+            class="alert alert-success d-flex align-items-center alert-dismissible fade show d-none mt-3" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-check-circle-fill mx-2" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+            <div>
+                <strong>Success!</strong> your details are updated.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-2 font-monospace fw-semibold fs-2">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-code"
+            viewBox="0 0 16 16">
+            <path
+                d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z" />
+        </svg>
+        Upcoming Contests
+
+    </div>
+    <div class="container my-5">
+        <table class="table table-bordered table-responsive-sm">
+            <thead>
+                <tr>
+                    <th scope="col" class="table-info">
+                        <center>Contest</center>
+                    </th>
+                    <th scope="col" class="table-info">
+                        <center>Start Time</center>
+                    </th>
+                    <th scope="col" class="table-info">
+                        <center>Duration</center>
+                    </th>
+                    <th scope="col" class="table-info">
+                        <center>Registration Link</center>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="upcoming-contests">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container my-4" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01">Topic</label>
+                    <select class="form-select" id="inputGroupSelect04"
+                        aria-label="Example select with button addon">
+                        <option value="0" disabled selected>Search Problem</option>
+                        <option value="1">Binary Search</option>
+                        <option value="2">Bitmasks</option>
+                        <option value="3">Brute Force</option>
+                        <option value="4">Combinatorics</option>
+                        <option value="5">Constructive Algorithms</option>
+                        <option value="6">Data Structures</option>
+                        <option value="7">DFS and similar</option>
+                        <option value="8">Divide and Conquer</option>
+                        <option value="9">DP</option>
+                        <option value="10">Greedy</option>
+                        <option value="11">Expression Parsing</option>
+                        <option value="12">Games</option>
+                        <option value="13">Geometry</option>
+                        <option value="14">Graphs</option>
+                        <option value="15">Hashing</option>
+                    </select>
+                    <button id="code-now" class="btn btn-outline-success" type="button">Code</button>
+                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
